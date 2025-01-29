@@ -67,17 +67,25 @@
       /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16841114314">
-  </script>
-  <!-- Event snippet for Page view conversion page -->
-  <script>
-    gtag('event', 'conversion', {
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16841114314">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16841114314');
+</script>
+<!-- Event snippet for Page view conversion page -->
+<script>
+  gtag('event', 'conversion', {
       'send_to': 'AW-16841114314/ue0TCMCb65UaEMqFvN4-',
       'value': 1.0,
       'currency': 'BRL'
-    });
-  </script>
+  });
+</script>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
@@ -176,10 +184,9 @@
               cuidamos da nossa saúde mental. Quando foi a última vez que você fez uma avaliação com um terapeuta?
               Quando acha que é a hora de cuidar de você?
             </p>
-            <p data-aos="fade-left" data-aos-delay="400"><a target="_blank" href="https://wa.link/7xpwma"
-                class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
-                <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
-                Agende sua consulta</a></p>
+            <p data-aos="fade-left" data-aos-delay="400"><a target="_blank" href="https://wa.link/7xpwma" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
+              <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
+              Agende sua consulta</a></p>
           </div>
         </div>
 
@@ -205,8 +212,8 @@
               <p>Se você busca um espaço acolhedor e profissional para cuidar da sua saúde mental, estou aqui para
                 ajudar!</p>
             </div>
-            <img src="img/person11.jpg" loading="lazy" width="64" height="64" class="img-fluid rounded-circle me-3"
-              alt="" data-aos="fade">
+            <img src="img/person11.jpg" loading="lazy" width="64" height="64" class="img-fluid rounded-circle me-3" alt=""
+              data-aos="fade">
             <div class="fs-6">
               <span class="fw-bold">Emanuela Barbosa</span>
             </div>
@@ -229,7 +236,8 @@
               <p class="text-secondary lead">Você sabe o que é terapia cognitivo-comportamental?</p>
               <h2 class="display-6 mb-5">
                 A terapia cognitivo-comportamental é uma abordagem prática e eficaz para identificar e tratar depressão,
-                ansiedade e outros problemas emocionais que podem estar te impedindo de ter sucesso na vida profissional e pessoal.
+                ansiedade e
+                outros problemas emocionais que podem estar te impedindo de ter sucesso na vida profissional e pessoal.
               </h2>
             </div>
             <div class="col-12">
@@ -364,8 +372,7 @@
                         <span class="h6 fw-5">Michele Rocha</span><br>
                         <small class="text-muted">Assistente Social</small>
                       </p>
-                      <img src="img/person14.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt=""
-                        data-aos="fade">
+                      <img src="img/person14.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt="" data-aos="fade">
                     </div>
                   </div>
                 </div>
@@ -384,8 +391,7 @@
                         <span class="h6 fw-5">Franscisco Rodrigues</span><br>
                         <small class="text-muted">Servidor Público</small>
                       </p>
-                      <img src="img/person13.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt=""
-                        data-aos="fade">
+                      <img src="img/person13.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt="" data-aos="fade">
                     </div>
                   </div>
                 </div>
@@ -395,8 +401,7 @@
                 <div class="card p-4 shadow mt-3 border-0" data-aos="fade-left">
                   <div class="card-body">
                     <blockquote class="blockquote">
-                      <p>"Me ajudou a superar os medos que eu carregava a mais de 6 anos. Hoje consigo enfrentar os
-                        problemas sem fugir e sem me refugiar em algo. Sou outra pessoa graças ao trabalho da Manu."</p>
+                      <p>"Me ajudou a superar os medos que eu carregava a mais de 6 anos. Hoje consigo enfrentar os problemas sem fugir e sem me refugiar em algo. Sou outra pessoa graças ao trabalho da Manu."</p>
                     </blockquote>
                     <div class="d-flex justify-content-between border-top pt-3">
                       <p class="card-text">
@@ -449,7 +454,7 @@
         href="https://themewagon.com">ThemeWagon</a>
     </div>
   </footer>
-
+  
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
@@ -461,7 +466,7 @@
   <script>
     let scrollpos = window.scrollY;
     const header = document.querySelector(".navbar");
-    const header_height = header.offsetHeight;
+    const header_height = header.offsetHeight;    
 
     const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
     const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
