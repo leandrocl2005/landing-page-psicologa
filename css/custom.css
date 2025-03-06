@@ -1,0 +1,83 @@
+/* inter-300 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+    url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/inter-v12-latin-300.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local(''),
+    url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/inter-v12-latin-500.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+    url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/inter-v12-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+ul {
+  font-size: 1.6rem;
+}
+
+
+ul.identificacao-lista {
+  list-style-type: none;
+  /* Remove os bullets */
+  padding: 0;
+}
+
+ul.identificacao-lista li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+ul.identificacao-lista li:last-child {
+  border-bottom: none;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #555;
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 4px solid #fd7e1455;
+  /* destaque sutil na citação */
+}
+
+.hidden-item {
+  display: none;
+}
+
+button#btnLerMais {
+  background: none;
+  border: none;
+  color: #fd7e1455;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+}
+
+button#btnLerMais:hover {
+  color: #fd7e1499;
+}

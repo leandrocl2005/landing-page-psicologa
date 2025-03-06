@@ -29,77 +29,44 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/theme.min.css">
-  <style>
-    /* inter-300 - latin */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: local(''),
-        url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-300.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+  <link rel="stylesheet" href="css/custom.css">
 
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: local(''),
-        url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-500.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16841114314">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: local(''),
-        url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('./fonts/inter-v12-latin-700.woff') format('woff');
-      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-  </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16841114314">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16841114314');
-</script>
-<!-- Event snippet for Page view conversion page -->
-<script>
-  gtag('event', 'conversion', {
+    gtag('config', 'AW-16841114314');
+  </script>
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag('event', 'conversion', {
       'send_to': 'AW-16841114314/ue0TCMCb65UaEMqFvN4-',
       'value': 1.0,
       'currency': 'BRL'
-  });
-</script>
+    });
+  </script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KBJKC849');</script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KBJKC849');</script>
   <!-- End Google Tag Manager -->
 
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBJKC849"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBJKC849" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Navbar -->
   <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
@@ -126,12 +93,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#testimonials">
-              Testimonials
+              Depoimentos
             </a>
           </li>
 
         </ul>
-        <a target="_blank" href="https://wa.link/7xpwma" class="link-dark pb-1 link-fancy me-2">
+        <a target="_blank" href="https://wa.link/7xpwma" class="link-dark pb-1 link-fancy me-2" id="CTA-depoimentos">
           <i class="bi bi-whatsapp" style="padding-right: 8px;"></i>
           Faça seu agendamento</a>
       </div>
@@ -141,7 +108,7 @@
 
   <main>
 
-    <!-- Banner -->
+    <!-- Banner CTA -->
     <div class="w-100 overflow-hidden bg-gray-100" id="top">
       <div class="container position-relative">
         <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left"
@@ -149,32 +116,32 @@
         </div>
         <div class="row px-3 ">
           <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
-            <h1 class="display-1 fw-bold mt-4">Ajudo a superar suas barreiras emocionais</h1>
-            <p class="lead">Sou Terapeuta Cognitivo Comportamental com mais de 6 anos de experiência tratando depressão
-              e ansiedade.</p>
-            <a target="_blank" href="https://wa.link/7xpwma" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
+            <h1 class="display-1 fw-bold mt-4">Tá tudo bem pedir ajuda!</h1>
+            <p class="lead">Entenda como a terapia funciona. Primeira sessão gratuita.</p>
+            <a id="cta-banner" target="_blank" href="https://wa.link/7xpwma"
+              class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5" id="CTA-banner">
               <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
-              Agende sua consulta</a>
+              Agende já sua sessão</a>
           </div>
         </div>
       </div>
     </div>
     <!-- End Banner -->
 
-    <div class="py-vh-4 bg-gray-100 px-3 w-100 overflow-hidden">
+    <!-- Quem sou eu -->
+    <div class="py-vh-4 bg-gray-100 px-3 w-100 overflow-hidden" id="aboutme">
       <div class="container">
-
         <div class="row d-flex justify-content-between align-items-center">
           <div class="col-lg-6">
             <div class="row gx-5 d-flex">
               <div class="col-md-11">
-                <div class="shadow ratio ratio-16x9 rounded bg-cover bp-center align-self-end" data-aos="fade-right"
-                  style="background-image: url(img/people115.jpg);--bs-aspect-ratio: 50%;">
+                <div class="shadow ratio ratio-16x9 rounded d-none d-md-block bg-cover bp-center align-self-end" data-aos="fade-right">
+                  <img src="img/people115.jpg" class="img-fluid rounded" alt="people">
                 </div>
               </div>
               <div class="col-md-5 offset-md-1">
-                <div class="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" data-aos="fade-up"
-                  style="background-image: url(img/people42.jpg);">
+                <div class="shadow ratio ratio-1x1 rounded  d-none d-md-block bg-cover mt-5 bp-center float-end" data-aos="fade-up">
+                  <img src="img/people42.jpg" class="img-fluid rounded" alt="people">
                 </div>
               </div>
               <div class="col-md-6">
@@ -186,33 +153,10 @@
           </div>
           <div class="col-lg-4">
             <h3 class="py-5 border-top border-dark" data-aos="fade-left">
-              Você vai ao médico regularmente, mas e ao psicólogo? Já pensou em cuidar da suas emoções e dos seus
-              sentimentos?
+              Quem sou eu?
             </h3>
-            <p data-aos="fade-left" data-aos-delay="200">
-              Cuidamos da nossa casa, do nosso carro, do nosso emprego, dos nossos familiares, da nossa educação, da
-              nossa saúde física e vamos regularmente ao dentista, mas não
-              cuidamos da nossa saúde mental. Quando foi a última vez que você fez uma avaliação com um terapeuta?
-              Quando acha que é a hora de cuidar de você?
-            </p>
-            <p data-aos="fade-left" data-aos-delay="400"><a target="_blank" href="https://wa.link/7xpwma" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
-              <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
-              Agende sua consulta</a></p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Biography -->
-    <div class="container py-vh-4 w-100 px-3 overflow-hidden" id="aboutme">
-      <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-lg-5">
-          <h3 class="py-5 border-top border-dark" data-aos="fade-right">Quem sou eu?</h3>
-        </div>
-        <div class="col-md-7" data-aos="fade-left">
-          <blockquote>
-            <div class="fs-4 my-3 fw-light pt-4 border-bottom pb-3">
+            <div class="bio">
+              <p data-aos="fade-left" data-aos-delay="200">
               <p>Sou psicóloga especialista em Terapia Cognitivo-Comportamental (TCC) e atuo com atendimento psicológico
                 online, ajudando pessoas a lidar com ansiedade, estresse, depressão e outros desafios emocionais. Minha
                 abordagem é prática e baseada em evidências, focada no desenvolvimento de estratégias eficazes para
@@ -222,23 +166,25 @@
                 associados e na promoção da autonomia para pessoas com deficiência.</p>
               <p>Se você busca um espaço acolhedor e profissional para cuidar da sua saúde mental, estou aqui para
                 ajudar!</p>
+              </p>
+              <div class="fs-6">
+                <span class="fw-bold">Emanuela Barbosa</span>
+              </div>
+              <div class="fs-6">
+                <span>CRP 04/37900</span>
+              </div>
+              <p data-aos="fade-left" data-aos-delay="400"><a id="CTA-bio" target="_blank" href="https://wa.link/7xpwma"
+                  class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
+                  <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
+                  Agende já sua consulta</a></p>
             </div>
-            <img src="img/person11.jpg" loading="lazy" width="64" height="64" class="img-fluid rounded-circle me-3" alt=""
-              data-aos="fade">
-            <div class="fs-6">
-              <span class="fw-bold">Emanuela Barbosa</span>
-            </div>
-            <div class="fs-6">
-              <span>CRP 04/37900</span>
-            </div>
-
-          </blockquote>
+          </div>
         </div>
-
       </div>
     </div>
-    <!-- End Biography -->
+    <!-- End quem sou eu -->
 
+    <!-- Sobre terapia -->
     <div class="py-vh-6 bg-gray-900 text-light w-100 overflow-hidden">
       <div class="container">
         <div class="row d-flex justify-content-center">
@@ -246,9 +192,11 @@
             <div class="col-lg-8 text-center" data-aos="fade">
               <p class="text-secondary lead">Você sabe o que é terapia cognitivo-comportamental?</p>
               <h2 class="display-6 mb-5">
-                A terapia cognitivo-comportamental é uma abordagem prática e eficaz para identificar e tratar depressão,
+                A terapia cognitivo-comportamental é uma abordagem prática e eficaz para identificar e tratar
+                depressão,
                 ansiedade e
-                outros problemas emocionais que podem estar te impedindo de ter sucesso na vida profissional e pessoal.
+                outros problemas emocionais que podem estar te impedindo de ter sucesso na vida profissional e
+                pessoal.
               </h2>
             </div>
             <div class="col-12">
@@ -261,10 +209,77 @@
 
         </div>
       </div>
+  </div>
+  <!-- end sobre terapia -->
+
+    <!-- Identificação com o cliente -->
+    <div class="container py-vh-3 w-100 px-3 overflow-hidden" id="customer-identification">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-5">
+          <img src="img/people2.jpg" class="img-fluid rounded" alt="people" data-aos="fade-right">
+        </div>
+        <div class="col-md-7" data-aos="fade-left">
+          <div class="container py-5">
+            <h2 class="text-left mb-4">O que você pensa e sente que te impede de ser feliz?</h2>
+            <ul class="identificacao-lista">
+              <li>
+                <blockquote>“Minha mente não para um segundo.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Eu durmo cansado e acordo exausto.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Eu não sinto vontade de fazer nada.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Todo mundo parece dar conta, menos eu.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Eu me sinto cansado até de existir.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Não sei nem o que falar numa sessão.”</blockquote>
+              </li>
+              <li>
+                <blockquote>“Vou gastar dinheiro e continuar igual.”</blockquote>
+              </li>
+              <li class="hidden-item">
+                <blockquote>“Ninguém entende o que eu sinto.”</blockquote>
+              </li>
+              <li class="hidden-item">
+                <blockquote>“Só quem tem problema grave precisa de terapia.”</blockquote>
+              </li>
+              <li class="hidden-item">
+                <blockquote>“Eu tento controlar, mas não consigo.”</blockquote>
+              </li>
+              <li class="hidden-item">
+                <blockquote>“Eu queria pedir ajuda, mas tenho vergonha.”</blockquote>
+              </li>
+              <li class="hidden-item">
+                <blockquote>“Eu devia dar conta sozinho(a).”</blockquote>
+              </li>
+            </ul>
+
+            <div class="text-left mt-3">
+              <button id="btnLerMais" onclick="mostrarMais()">Ler mais...</button>
+            </div>
+
+            <p data-aos="fade-left" data-aos-delay="400">
+              <a target="_blank" href="https://wa.link/7xpwma"
+                class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">
+                <i class="bi bi-whatsapp" style="padding-right: 4px;"></i>
+                Comece agora a mudança
+              </a>
+            </p>
+          </div>
+
+        </div>
+      </div>
     </div>
+    <!-- End Identificação com o cliente -->
 
     <!-- Como funciona -->
-    <div class="small py-vh-3 px-2 w-100 overflow-hidden" id="howitworks">
+    <div class="small py-vh-2 px-2 w-100 overflow-hidden" id="howitworks">
       <div class="container">
 
         <div class="row d-flex justify-content-center">
@@ -301,16 +316,16 @@
                   version="1.1" id="svg14304" sodipodi:docname="search.svg" inkscape:export-filename="search-2.svg"
                   inkscape:export-xdpi="96" inkscape:export-ydpi="96"
                   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:svg="http://www.w3.org/2000/svg">
+                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                   <defs id="defs14308" />
                   <path
                     d="M 14.5,3 A 0.5,0.5 0 0 1 15,3.5 v 9 A 0.5,0.5 0 0 1 14.5,13 H 1.5 A 0.5,0.5 0 0 1 1,12.5 v -9 A 0.5,0.5 0 0 1 1.5,3 Z M 1.5,2 A 1.5,1.5 0 0 0 0,3.5 v 9 A 1.5,1.5 0 0 0 1.5,14 h 13 A 1.5,1.5 0 0 0 16,12.5 v -9 A 1.5,1.5 0 0 0 14.5,2 Z"
                     id="path14300" />
                   <rect style="fill:#000000" id="rect14790" width="6.0579" height="1.1450908" x="2.1793659"
                     y="4.0632257" />
-                  <rect style="fill:#000000;stroke-width:0.917313" id="rect14790-3" width="5.0975013" height="1.1450908"
-                    x="2.2532432" y="6.2979999" />
+                  <rect style="fill:#000000;stroke-width:0.917313" id="rect14790-3" width="5.0975013"
+                    height="1.1450908" x="2.2532432" y="6.2979999" />
                   <g id="g14936" transform="translate(-0.1767767,-0.04419417)">
                     <rect style="fill:#000000;stroke-width:0.627816" id="rect14790-3-5" width="2.7663445"
                       height="0.98837441" x="0.50453192" y="13.447747" transform="rotate(-45.155629)" />
@@ -359,23 +374,22 @@
     </div>
     <!-- End 'Como funciona' -->
 
-    <!-- Testimonials -->
+    <!-- Depoimentos -->
     <div class="bg-light w-100 overflow-hidden" id="testimonials">
       <div class="container py-vh-6">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-lg-10 col-xl-8 text-center">
-            <h2 class="display-6">O que meus pacientes dizem?</h2>
-            <p class="lead">Nesses mais de 6 anos de trabalho, coletei alguns feedbacks que me inspiram a continuar a
-              ajudar vocês com toda minha garra</p>
+            <h2 class="display-5">Não precisa acreditar em mim! <br> Veja o que meus pacientes dizem...</h2>
           </div>
           <div class="col-12 mt-4">
             <div class="row row-cols-1 row-cols-md-2 g-5 d-flex align-items-center">
 
               <div class="col-12 col-lg-6 col-xl-4">
-                <div class="card p-4 mt-3 shadow border-0" data-aos="fade-right">
+                <div class="card p-4 mt-3 mx-2 shadow border-0" data-aos="fade-right">
                   <div class="card-body">
                     <blockquote class="blockquote">
-                      <p>"Estou feliz por ter conhecido a Manu. Agora tenho mais motivação para trablahar e lidar com
+                      <p>"Estou feliz por ter conhecido a Manu. Agora tenho mais motivação para trablahar e lidar
+                        com
                         as frustações do dia a dia."</p>
                     </blockquote>
                     <div class="d-flex justify-content-between border-top pt-3">
@@ -383,18 +397,20 @@
                         <span class="h6 fw-5">Michele Rocha</span><br>
                         <small class="text-muted">Assistente Social</small>
                       </p>
-                      <img src="img/person14.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt="" data-aos="fade">
+                      <img src="img/person14.jpg" loading="lazy" width="48" height="48" class="rounded-circle"
+                        alt="" data-aos="fade">
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-12 col-lg-6 col-xl-4">
-                <div class="card p-4 shadow mt-3 border-0" data-aos="fade-up">
+                <div class="card p-4 shadow mt-3 mx-2 border-0" data-aos="fade-up">
                   <div class="card-body">
                     <blockquote class="blockquote">
                       <p>"A Manu me ajudou a resolver problemas que eu carregava há mais de 40 anos, me ajudou a
-                        entender, lidar e resolver o meu problema. Hoje eu sou uma pessoa melhor e tento levar a minha
+                        entender, lidar e resolver o meu problema. Hoje eu sou uma pessoa melhor e tento levar a
+                        minha
                         vida de uma maneira mais leve."</p>
                     </blockquote>
                     <div class="d-flex justify-content-between border-top pt-3">
@@ -402,25 +418,28 @@
                         <span class="h6 fw-5">Franscisco Rodrigues</span><br>
                         <small class="text-muted">Servidor Público</small>
                       </p>
-                      <img src="img/person13.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt="" data-aos="fade">
+                      <img src="img/person13.jpg" loading="lazy" width="48" height="48" class="rounded-circle"
+                        alt="" data-aos="fade">
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="col-12 col-lg-6 col-xl-4">
-                <div class="card p-4 shadow mt-3 border-0" data-aos="fade-left">
+                <div class="card p-4 shadow mx-2 mt-3 border-0" data-aos="fade-left">
                   <div class="card-body">
                     <blockquote class="blockquote">
-                      <p>"Me ajudou a superar os medos que eu carregava a mais de 6 anos. Hoje consigo enfrentar os problemas sem fugir e sem me refugiar em algo. Sou outra pessoa graças ao trabalho da Manu."</p>
+                      <p>"Me ajudou a superar os medos que eu carregava a mais de 6 anos. Hoje consigo enfrentar os
+                        problemas sem fugir e sem me refugiar em algo. Sou outra pessoa graças ao trabalho da Manu."
+                      </p>
                     </blockquote>
                     <div class="d-flex justify-content-between border-top pt-3">
                       <p class="card-text">
                         <span class="h6 fw-5">Guilherme Martins</span><br>
                         <small class="text-muted">Supervisor e monitor de comunidade terapêutica</small>
                       </p>
-                      <img src="img/person45.jpg" loading="lazy" width="48" height="48" class="rounded-circle" alt=""
-                        data-aos="fade">
+                      <img src="img/person45.jpg" loading="lazy" width="48" height="48" class="rounded-circle"
+                        alt="" data-aos="fade">
                     </div>
                   </div>
                 </div>
@@ -432,30 +451,30 @@
         </div>
       </div>
     </div>
-    <!-- End 'Testimonials' -->
+    <!-- End 'Depoimentos' -->
 
     <!-- Last Call to Action -->
     <div class="container py-vh-3 border-top pt-5 pb-5" data-aos="fade" data-aos-delay="200">
       <div class="row d-flex justify-content-center">
         <div class="col-12 col-lg-8 text-center mb-3">
-          <h3 class="fs-2 fw-light">Você está a um passo de solucionar o que está te impedindo de ter uma vida feliz!
+          <h2 class="fs-2 fw-light display-5 mx-2">A ajuda que você busca está a um clique de distância. Comece a cuidar da sua mente com o carinho que ela merece.
             <span class="fw-bold">
-              Agende sua consulta</span>
+              Fale comigo</span>
             agora!
-          </h3>
+          </h2>
         </div>
         <div class="col-12 col-lg-8 text-center">
           <div class="row d-flex justify-content-center">
             <div class="col-auto">
-              <a target="_blank" href="https://wa.link/7xpwma" class="btn btn-dark py-3 px-5"><i class="bi bi-whatsapp"
-                  style="color: white; padding-right: 8px;"></i> Agendar</a>
+              <a target="_blank" href="https://wa.link/7xpwma" class="btn btn-dark py-3 px-5" id="CTA-last"><i
+                  class="bi bi-whatsapp" style="color: white; padding-right: 8px;"></i>Começar agora</a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- End 'Last Call to Action' -->
-
+    
   </main>
 
   <footer class="py-vh-3 border-top">
@@ -465,32 +484,10 @@
         href="https://themewagon.com">ThemeWagon</a>
     </div>
   </footer>
-  
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // values from 0 to 3000, with step 50ms
-    });
-  </script>
-
-  <script>
-    let scrollpos = window.scrollY;
-    const header = document.querySelector(".navbar");
-    const header_height = header.offsetHeight;    
-
-    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
-    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
-
-    window.addEventListener('scroll', function () {
-      scrollpos = window.scrollY;
-
-      if (scrollpos >= header_height) { add_class_on_scroll(); }
-      else { remove_class_on_scroll(); }
-
-      console.log(scrollpos);
-    })
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 
