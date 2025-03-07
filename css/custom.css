@@ -81,3 +81,11 @@ button#btnLerMais {
 button#btnLerMais:hover {
   color: #fd7e1499;
 }
+
+div.bio {
+  font-size: 1.2rem;
+}
+
+div#howitworks {
+  font-size: 1.2rem;
+}
