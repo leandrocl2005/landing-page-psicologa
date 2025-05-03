@@ -1,3 +1,19 @@
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #fd7e14; /* laranja */
+  outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  color: #fd7e14;
+  text-decoration: underline;
+}
+
 /* inter-300 - latin */
 @font-face {
   font-family: 'Inter';
@@ -72,7 +88,8 @@ blockquote {
 button#btnLerMais {
   background: none;
   border: none;
-  color: #fd7e1455;
+  color: #fd7e14; 
+  opacity: 0.8;
   cursor: pointer;
   font-size: 1.4rem;
   margin-top: 0.8rem;
@@ -89,3 +106,42 @@ div.bio {
 div#howitworks {
   font-size: 1.2rem;
 }
+
+#teste-ansiedade {
+  background-color: #f8f9fa; /* cor clara para destacar */
+  margin-top: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  border-top: 1px solid #dee2e6;
+}
+
+#teste-ansiedade h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+#teste-ansiedade p.lead {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+#teste-ansiedade .card {
+  background: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+#teste-ansiedade .form-label {
+  font-weight: 500;
+}
+
+#teste-ansiedade select {
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+#teste-ansiedade button[type="submit"] {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
