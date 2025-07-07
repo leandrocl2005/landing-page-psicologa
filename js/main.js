@@ -55,7 +55,7 @@ function abrirModal(event) {
   }
 
   // Preenche o campo hidden com a pontuação
-  document.getElementById('quizScoreInput').value = score;
+  document.getElementById('pontuacao_gad7').value = score;
 
   // Abre o modal
   const modal = new bootstrap.Modal(document.getElementById('modalWhatsapp'));
@@ -85,7 +85,7 @@ document.getElementById('whatsappForm').addEventListener('submit', async functio
   const formData = new FormData(form);
 
   try {
-    const response = await fetch('https://formspree.io/f/xpwdpkyb', {
+      const response = await fetch('https://formspree.io/f/xeokbqvq', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
