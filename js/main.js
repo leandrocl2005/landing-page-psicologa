@@ -1,96 +1,81 @@
+/* =====================================================
+   MANU PSICÓLOGA — main.js
+   ===================================================== */
+
 AOS.init({
-  duration: 800, // values from 0 to 3000, with step 50ms
+  duration: 700,
+  once: true,
+  offset: 60,
 });
 
-let scrollpos = window.scrollY;
-const header = document.querySelector(".navbar");
-const header_height = header.offsetHeight;
+/* ===== NAVBAR scroll ===== */
+const header = document.querySelector('.navbar');
+const headerHeight = header ? header.offsetHeight : 72;
 
-const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
-const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
-
-window.addEventListener('scroll', function () {
-  scrollpos = window.scrollY;
-
-  if (scrollpos >= header_height) { add_class_on_scroll(); }
-  else { remove_class_on_scroll(); }
-
-})
-
-function mostrarMais() {
-  const hiddenItems = document.querySelectorAll('.hidden-item');
-  hiddenItems.forEach(item => {
-    item.style.display = 'block';
-  });
-
-  document.getElementById('btnLerMais').style.display = 'none';
-
-  // Disparo para GTM - exemplo
-  if (window.dataLayer) {
-    dataLayer.push({
-      'event': 'ler_mais_clicado',
-      'section': 'identificacao-visitantes'
+let scrollTick = false;
+window.addEventListener('scroll', () => {
+  if (!scrollTick) {
+    requestAnimationFrame(() => {
+      if (window.scrollY >= headerHeight) {
+        header.classList.add('scrolled', 'shadow-sm');
+      } else {
+        header.classList.remove('scrolled', 'shadow-sm');
+      }
+      scrollTick = false;
     });
+    scrollTick = true;
   }
+});
+
+/* ===== MOBILE STICKY BAR — oculta quando hero visível ===== */
+const mobileStickyBar = document.getElementById('mobileStickyBar');
+if (mobileStickyBar && window.innerWidth < 992) {
+  const heroSection = document.getElementById('top');
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      mobileStickyBar.style.opacity = entry.isIntersecting ? '0' : '1';
+      mobileStickyBar.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+    },
+    { threshold: 0.3 }
+  );
+  if (heroSection) observer.observe(heroSection);
 }
 
-let timeout;
-window.addEventListener('scroll', function () {
-  clearTimeout(timeout);
-  timeout = setTimeout(() => {
-    scrollpos = window.scrollY;
-    if (scrollpos >= header_height) add_class_on_scroll();
-    else remove_class_on_scroll();
-  }, 50);
-});
-
+/* ===== QUIZ GAD-7 ===== */
 function abrirModal(event) {
   event.preventDefault();
   const form = document.getElementById('quizForm');
   const formData = new FormData(form);
-
   let score = 0;
-  for (let [key, value] of formData.entries()) {
-    score += parseInt(value, 10);
+  for (const value of formData.values()) {
+    score += parseInt(value, 10) || 0;
   }
-
-  // Preenche o campo hidden com a pontuação
   document.getElementById('pontuacao_gad7').value = score;
 
-  // Abre o modal
   const modal = new bootstrap.Modal(document.getElementById('modalWhatsapp'));
   modal.show();
 
-  // GTM event (opcional)
   if (window.dataLayer) {
-    dataLayer.push({
-      event: 'quiz_iniciado',
-      score: score
-    });
+    dataLayer.push({ event: 'quiz_concluido', score });
   }
 }
 
+/* ===== MODAL — envio Formspree ===== */
 document.getElementById('whatsappForm').addEventListener('submit', async function (e) {
   e.preventDefault();
-
   const form = e.target;
   const submitBtn = document.getElementById('submitBtn');
   const loadingBtn = document.getElementById('loadingBtn');
   const successMessage = document.getElementById('successMessage');
 
-  // Mostrar estado de carregamento
   submitBtn.classList.add('d-none');
   loadingBtn.classList.remove('d-none');
 
-  const formData = new FormData(form);
-
   try {
-      const response = await fetch('https://formspree.io/f/xeokbqvq', {
+    const response = await fetch('https://formspree.io/f/xeokbqvq', {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-      },
-      body: formData,
+      headers: { Accept: 'application/json' },
+      body: new FormData(form),
     });
 
     if (response.ok) {
@@ -99,22 +84,51 @@ document.getElementById('whatsappForm').addEventListener('submit', async functio
       successMessage.classList.remove('d-none');
       form.reset();
 
-      // Após 3 segundos, fecha o modal e rola até o banner
-      setTimeout(() => {
-        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('modalWhatsapp'));
-        modalInstance.hide();
+      if (window.dataLayer) {
+        dataLayer.push({
+          event: 'lead_capturado',
+          metodo: 'quiz_gad7',
+          pontuacao: document.getElementById('pontuacao_gad7').value,
+        });
+      }
 
-        // Scroll suave até o início da página
+      setTimeout(() => {
+        bootstrap.Modal.getInstance(document.getElementById('modalWhatsapp')).hide();
         document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
       }, 3000);
     } else {
-      alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+      alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
     }
-  } catch (error) {
-    alert("Erro de conexão. Tente novamente.");
+  } catch {
+    alert('Erro de conexão. Por favor, tente novamente.');
   } finally {
     loadingBtn.classList.add('d-none');
     submitBtn.classList.remove('d-none');
   }
 });
 
+/* ===== TRACKING — cliques em CTAs ===== */
+document.querySelectorAll('a[href*="wa.link"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    const id = el.id || 'cta-whatsapp';
+    if (window.dataLayer) {
+      dataLayer.push({ event: 'cta_whatsapp_clicado', cta_id: id });
+    }
+  });
+});
+
+/* ===== SCROLL DEPTH TRACKING ===== */
+const depthMarks = { 25: false, 50: false, 75: false, 90: false };
+window.addEventListener('scroll', () => {
+  const scrollPct = Math.round(
+    (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+  );
+  for (const mark of Object.keys(depthMarks)) {
+    if (!depthMarks[mark] && scrollPct >= parseInt(mark)) {
+      depthMarks[mark] = true;
+      if (window.dataLayer) {
+        dataLayer.push({ event: 'scroll_depth', profundidade: `${mark}%` });
+      }
+    }
+  }
+});
