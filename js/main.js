@@ -117,6 +117,15 @@ document.querySelectorAll('a[href*="wa.link"]').forEach((el) => {
   });
 });
 
+/* ===== CALENDLY — agendamento confirmado ===== */
+window.addEventListener('message', (e) => {
+  if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+    if (window.dataLayer) {
+      dataLayer.push({ event: 'sessao_agendada' });
+    }
+  }
+});
+
 /* ===== SCROLL DEPTH TRACKING ===== */
 const depthMarks = { 25: false, 50: false, 75: false, 90: false };
 window.addEventListener('scroll', () => {
