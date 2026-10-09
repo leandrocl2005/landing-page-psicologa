@@ -1,0 +1,11 @@
+{
+  "name": "manupsico-stripe-admin",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "stripe": "node --env-file-if-exists=.env cli.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": { "stripe": "23.0.0" }
+}
