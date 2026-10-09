@@ -1,0 +1,31 @@
+.payments-page { margin: 0; padding: 0; background: var(--brand-xlight); line-height: 1.65; }
+.payments-header { max-width: 1060px; margin: auto; padding: 28px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.payments-header a, .payments-main a { color: var(--brand-dark); }
+.payments-brand { font-size: 1.3rem; font-weight: 700; text-decoration: none; }
+.payments-brand span { color: var(--brand); }
+.payments-main { max-width: 800px; margin: 25px auto 60px; padding: 0 24px; }
+.payments-eyebrow { color: var(--brand); font-size: .75rem; font-weight: 700; letter-spacing: .15em; }
+.payments-main h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.04em; margin: 12px 0 20px; }
+.payments-intro { font-size: 1.1rem; color: var(--text-muted); max-width: 660px; }
+.payments-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 32px; margin: 32px 0; }
+.payments-main h2 { font-size: 1.2rem; line-height: 1.35; margin: 0 0 12px; }
+.payments-card p { margin: 0 0 18px; }
+.payment-price { font-size: 2rem; font-weight: 700; color: var(--brand-dark); }
+.payment-price span { font-size: .9rem; font-weight: 400; color: var(--text-muted); }
+#payment-status { background: var(--brand-xlight); padding: 16px; border-radius: var(--radius); }
+.payments-main .payment-button { display: block; color: white; background: var(--brand-dark); border-radius: var(--radius); padding: 14px 20px; text-align: center; font-weight: 700; text-decoration: none; }
+.payment-button[hidden] { display: none; }
+.payment-button:hover { background: var(--brand); }
+.payment-contact { display: block; text-align: center; padding: 14px 0; font-weight: 500; }
+.payments-card .payment-note { color: var(--text-muted); font-size: .875rem; text-align: center; margin: 10px 0 0; }
+.payments-details { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.payments-details p { color: var(--text-muted); margin: 0 0 12px; }
+.payment-privacy { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 24px; font-size: .875rem; color: var(--text-muted); }
+.payments-footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: .85rem; }
+@media (max-width: 600px) {
+  .payments-header { padding: 20px; font-size: .875rem; }
+  .payments-brand { font-size: 1.05rem; }
+  .payments-main { padding: 0 20px; margin-top: 16px; }
+  .payments-card { padding: 24px 20px; }
+  .payments-details { grid-template-columns: 1fr; gap: 24px; }
+}

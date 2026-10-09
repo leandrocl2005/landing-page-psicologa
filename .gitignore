@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.stripe-state/
+playwright-report/
+test-results/
